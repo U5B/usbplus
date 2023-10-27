@@ -1,6 +1,7 @@
 package net.usbwire.usbplus.util
 
 import gg.essential.universal.UChat
+import gg.essential.universal.wrappers.UPlayer
 import gg.essential.universal.wrappers.message.*
 import net.usbwire.usbplus.USBPlus
 import java.nio.file.*
@@ -48,6 +49,14 @@ object Util {
 		val prefix = UTextComponent(UChat.addColor("§7[§a${USBPlus.name}§7]§r "))
 		message.addTextComponent(0, prefix)
 		message.chat()
+	}
+
+	fun say(str: String) {
+		if (str.startsWith("/")) {
+			UPlayer.getPlayer()!!.networkHandler.sendCommand(str.substring(1));
+		} else {
+			UPlayer.getPlayer()!!.networkHandler.sendChatMessage(str);
+		}
 	}
 
 	fun getDimension (): String {

@@ -31,14 +31,14 @@ object Pickup {
 			// turn on pickup
 			ticksSneaking++
 			if (isSneaking == false && ticksSneaking > Config.pickupDelay) {
-				UChat.say("/pu all")
+				Util.say("/pu all")
 				isSneaking = true
 			}
 		} else if (!player.isSneaking) { // we only want this code to trigger when they stop sneaking
 			// turn off pickup
 			if (ticksSneaking > Config.pickupDelay) {
 				val pickupMode = getMode(Config.pickupMode)
-				UChat.say("/pu ${pickupMode}")
+				Util.say("/pu ${pickupMode}")
 			}
 			isSneaking = false
 			ticksSneaking = 0
