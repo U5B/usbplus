@@ -128,7 +128,7 @@ object Config : Vigilant(File(configFile)) {
 					HUD.alignRightExtra.set(it)
 					Base.configDirty = true
 				}
-				selector(::healthDrawSort, "Sort player list by", options = listOf("alphabetical", "health", "time"))
+				selector(::healthDrawSort, "Sort player list by", options = listOf("alphabetical", "health (low to high)", "health (high to low)", "time"))
 			}
 		}
 

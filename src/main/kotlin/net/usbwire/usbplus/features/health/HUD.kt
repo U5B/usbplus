@@ -143,9 +143,11 @@ object HUD {
 		// sort container by max health and percent
 		if (Config.healthDrawSort == 0) { // name
 			container.children.sortBy { it.componentName }
-		} else if (Config.healthDrawSort == 1) { // health
+		} else if (Config.healthDrawSort == 1) { // health (low to high)
 			container.children.sortBy { playerMap[it.componentName]!!.health.percent }
-		}
+		} else if (Config.healthDrawSort == 2) { // health (high to low)
+			container.children.sortByDescending { playerMap[it.componentName]!!.health.percent }
+		} // time
 	}
 
 	fun clear () {

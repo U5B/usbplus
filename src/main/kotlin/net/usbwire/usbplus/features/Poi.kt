@@ -148,7 +148,7 @@ object Poi {
 
 	val bountyRegex = """^§r§fYour bounty for today is §r§b(.*)§r§f!$""".toRegex()
 	fun onChat(message: UMessage): Boolean {
-		if (Config.poiEnabled || !bountyRegex.matches(message.formattedText)) return false
+		if (!Config.poiEnabled || !bountyRegex.matches(message.formattedText)) return false
 		val result = bountyRegex.matchEntire(message.formattedText)
 		val (poiString) = result!!.destructured
 		val searchPoi = searchPoi(poiString)
