@@ -56,11 +56,11 @@ object Debug {
 		val textCustomName = entity.customName
 		Util.chat("Entity Debug Information:")
 		val name = UMessage(UTextComponent(entity.name)).unformattedText
-		val displayName = UMessage(UTextComponent(entity.displayName)).unformattedText
+		// val displayName = UMessage(UTextComponent(entity.displayName)).unformattedText
 		val customName = if (textCustomName == null) "null" else UMessage(UTextComponent(textCustomName)).unformattedText
 		val entityType = UMessage(UTextComponent(entity.type.untranslatedName)).unformattedText
 		Util.chat("Name: ${name}")
-		Util.chat("DisplayName: ${displayName}")
+		// Util.chat("DisplayName: ${displayName}")
 		Util.chat("CustomName: ${customName}")
 		Util.chat("Type: ${entityType}")
 		Util.chat("Pos: (${entity.x}, ${entity.y}, ${entity.z})")
